@@ -38,9 +38,9 @@ jobs:
         run: |
           cat /etc/environment
           cd webapp
-          mvn clean install
           pwd
           ls
+          mvn clean install
       - name: Build Deployment Artifact
         run: |
           cd ..
