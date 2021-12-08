@@ -30,4 +30,6 @@ jobs:
         sudo mysql -e 'SHOW DATABASES;' -uroot -proot
     - name: Run tests
       run: |
+        pwd
+        cd webapp
         mvn -Dtest=UserApplicationTests test
