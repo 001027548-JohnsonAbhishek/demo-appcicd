@@ -37,13 +37,15 @@ jobs:
       - name: Build with maven
         run: |
           cat /etc/environment
+          cd webapp
           mvn clean install
           pwd
           ls
-      - name: Build Deployemnt Artifact
+      - name: Build Deployment Artifact
         run: |
+          cd ..
           mkdir codedeploy_artifact
-          zip -r ${{env.ARTIFACT_NAME}} codedeploy/*.sh appspec.yml webapp
+          zip -r ${{env.ARTIFACT_NAME}} codedeploy/*.sh appspec.yml webapp/src webapp/target webapp/pom.xml webapp/resources
           cp -rf ${{env.ARTIFACT_NAME}} codedeploy_artifact/
           pwd
           cd codedeploy_artifact
