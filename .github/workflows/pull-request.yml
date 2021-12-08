@@ -33,4 +33,4 @@ jobs:
         pwd
         cd webapp
         pwd
-        # mvn -Dtest=UserApplicationTests test
+        mvn -Dtest=UserApplicationTests test
