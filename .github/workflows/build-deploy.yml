@@ -62,6 +62,9 @@ jobs:
         run: |
           pwd
           ls
+          cd ..
+          pwd
+          ls
           aws s3 sync ./codedeploy_artifact s3://${{secrets.AWS_BUCKET_NAME}}
       - name: CodeDeploy API Call
         run: |
