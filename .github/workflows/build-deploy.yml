@@ -46,7 +46,7 @@ jobs:
           mkdir codedeploy_artifact
           pwd
           ls
-          zip -r ${{env.ARTIFACT_NAME}} demo-appcicd/codedeploy/*.sh appspec.yml webapp
+          zip -r ${{env.ARTIFACT_NAME}} demo-appcicd/codedeploy/*.sh demo-appcicd/appspec.yml  demo-appcicd/webapp
           cp -rf ${{env.ARTIFACT_NAME}} codedeploy_artifact/
           pwd
           cd codedeploy_artifact
@@ -63,7 +63,7 @@ jobs:
           pwd
           ls
           aws s3 sync ./codedeploy_artifact s3://${{secrets.AWS_BUCKET_NAME}}
-      - name: CodeDeploy API call
+      - name: CodeDeploy API Call
         run: |
           DEPLOYMENT_ID=`aws deploy create-deployment --application-name ${{ env.CODEDEPLOY_APPLICATION_NAME }} \
               --deployment-config-name CodeDeployDefault.AllAtOnce \
