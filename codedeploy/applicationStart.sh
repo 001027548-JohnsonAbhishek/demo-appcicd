@@ -1,6 +1,6 @@
 #!/bin/bash
 sleep 5m
-cd /home/ubuntu/webapp/
+cd /home/ubuntu/webapp/webapp
 sudo su
 sudo mvn clean
 sudo mvn clean install
