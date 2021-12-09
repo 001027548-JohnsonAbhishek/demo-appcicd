@@ -44,6 +44,8 @@ jobs:
         run: |
           cd ..
           mkdir codedeploy_artifact
+          pwd
+          ls
           zip -r ${{env.ARTIFACT_NAME}} codedeploy/*.sh appspec.yml webapp
           cp -rf ${{env.ARTIFACT_NAME}} codedeploy_artifact/
           pwd
