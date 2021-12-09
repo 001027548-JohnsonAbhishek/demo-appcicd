@@ -61,7 +61,7 @@ jobs:
       - name: Copy Artifact to S3
         run: |
           pwd
-          ls ./codedeploy_artifact
+          ls
           aws s3 sync ./codedeploy_artifact s3://${{secrets.AWS_BUCKET_NAME}}
       - name: CodeDeploy API call
         run: |
