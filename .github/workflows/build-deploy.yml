@@ -1,6 +1,5 @@
 name: Build and Deploy webapp
 env:
-  #Artifact Name: csye6225-webapp-${{github.run_number}}.zip
   ARTIFACT_NAME: csye6225-webapp-${{github.run_number}}.zip
   CODEDEPLOY_APPLICATION_NAME: csye6225-webapp
   CODEDEPLOY_APPLICATION_DEPLOYMENT_GROUP_NAME: csye6225-webapp-deployment
